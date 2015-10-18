@@ -44,7 +44,7 @@ class DB
             if (count($params))
             {
                 $x = 1;
-                
+
                 foreach ($params as $param)
                 {
                     $this->_query->bindValue($x, $param);
