@@ -4,7 +4,8 @@ class User
 {
     private $_db,
             $_data,
-            $_sessionName;
+            $_sessionName,
+            $_isLoggedIn;
 
 
     public function __construct($user = null)
@@ -12,6 +13,26 @@ class User
         $this->_db = DB::getInstance();
         $this->_sessionName = Config::get('session.session_name');
 
+        if (!$user)
+        {
+            if (Session::exists($this->_sessionName))
+            {
+                $user = Session::get($this->_sessionName);
+
+                if ($this->find($user))
+                {
+                    $this->_isLoggedIn = true;
+                }
+                else
+                {
+
+                }
+            }
+        }
+        else
+        {
+            $this->find($user);
+        }
     }
 
     public function create($fields = array())
@@ -57,9 +78,14 @@ class User
         return false;
     }
 
-    private function data()
+    public function data()
     {
         return $this->_data;
+    }
+
+    public function isLoggeIn()
+    {
+        return $this->_isLoggedIn;
     }
 
 }

@@ -19,7 +19,7 @@ if (Input::exists())
 
             if ($login)
             {
-                echo 'Success';
+                Redirect::to('index.php');
             }
             else
             {
