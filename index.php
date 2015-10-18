@@ -15,7 +15,7 @@ if ($user->isLoggeIn())
     <p>Hello, <a href="#"><?php echo escape($user->data()->username); ?></a>!</p>
 
     <ul>
-        <li><a href="#">Logout</a></li>
+        <li><a href="logout.php">Logout</a></li>
     </ul>
 <?php
 }
