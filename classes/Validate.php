@@ -34,21 +34,21 @@ class Validate
                             {
                                 $this->addError("{$item} must be a minimum of {$ruleValue} characters.");
                             }
-                        break;
+                            break;
 
                         case 'max':
                             if (strlen($value) > $ruleValue)
                             {
                                 $this->addError("{$item} must be a maximum of {$ruleValue} characters.");
                             }
-                        break;
+                            break;
 
                         case 'matches':
                             if ($value != $source[$ruleValue])
                             {
                                 $this->addError("{$ruleValue} must match {$item}");
                             }
-                        break;
+                            break;
 
                         case 'unique':
                             $check = $this->_db->get($ruleValue, array($item, '=', $value));
@@ -57,7 +57,7 @@ class Validate
                             {
                                 $this->addError("{$item} already exists.");
                             }
-                        break;
+                            break;
                     }
                 }
             }

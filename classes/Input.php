@@ -8,15 +8,15 @@ class Input
         {
             case 'post':
                 return (!empty($_POST)) ? true : false;
-            break;
+                break;
 
             case 'get':
                 return (!empty($_GET)) ? true : false;
-            break;
+                break;
 
             default:
                 return false;
-            break;
+                break;
         }
     }
 
