@@ -9,7 +9,7 @@ if (Session::exists('home'))
 
 $user = new User();
 
-if ($user->isLoggeIn())
+if ($user->isLoggedIn())
 {
 ?>
     <p>Hello, <a href="#"><?php echo escape($user->data()->username); ?></a>!</p>

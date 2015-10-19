@@ -125,7 +125,7 @@ class User
         return $this->_data;
     }
 
-    public function isLoggeIn()
+    public function isLoggedIn()
     {
         return $this->_isLoggedIn;
     }
